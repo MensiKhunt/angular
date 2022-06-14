@@ -1,0 +1,112 @@
+<p>form works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=<device-width>, initial-scale=1.0"> -->
+  <title>Document</title>
+</head>
+<body>
+  <h1>Tamplate Based Form</h1>
+  <form #myform="ngForm" [formGroup]="myfrm" >
+  <div class="container">
+    <div className="d-flex flex-column mt-5  align-items-center">
+        <h1 className="bg-light my-5">Sign up form</h1>
+        <form id="myForm" name="myForm" className="w-50">
+           <!-- <div class="m-1">
+            <label class="form-label" >Enter ID: </label>
+          <span class="value" *ngIf="!editMode">{{model.id}}</span> 
+            <input 
+              class="form-control"
+              type="text"
+              name="id"
+              [(ngModel)]="model.id"
+              placeholder="Enter your ID"
+            />
+          </div>  -->
+          <div class="m-1 text-start">
+            <label class="form-label" >Enter Name: </label>
+            <input
+              class="form-control"
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              [(ngModel)]="model.name"
+            
+            />
+          </div>
+          <div class="m-1">
+            <label class="form-label" >Enter Address: </label>
+            <input
+              class="form-control"
+              type="text"
+              name="address"
+              [(ngModel)]="model.address"
+              placeholder="Enter your address"
+            />
+          </div>
+          <div class="m-1">
+            <label class="form-label" >Select Gender : </label>
+          <input type="radio" name="gender" value="male" [(ngModel)]="model.gender">Male 
+          <input type="radio" name="gender" value="female" [(ngModel)]="model.gender">Female 
+          </div>
+          <div class="m-1">
+            <label class="form-label" >Enter Cars: </label>
+            <select
+              class="form-select"
+              name="cars"
+              [(ngModel)]="model.cars">
+              <option>--please select cars--</option>
+              <option value="Brezza">Brezza</option>
+              <option value="Creata">Creata</option>
+              <option value="Volvo">Volvo</option>
+            </select>
+          </div>
+          <div class=" text-start m-1">
+            <label class="form-label">Enter date of joining:
+            </label>
+            <input
+              class="form-control"
+              type="date"
+              name="doj"
+              id="doj"
+              [(ngModel)]="model.doj"
+            />
+          </div> 
+          <div class=" text-start m-1">
+            <label class="form-label" >Enter Country: </label>
+            <input
+              class="form-control"
+              type="text"
+              name="country"
+              id="country"
+              placeholder="Enter your country"
+              [(ngModel)]="model.country"
+            />
+          </div>
+
+          <!-- <div *ngFor="let CountryData of CountryData; let i=index">
+            <label>
+              <input type="checkbox" name="CountryData" [value]="CountryData.value" (change)="onCheckboxChange($event)" />
+              {{CountryData.name}}
+            </label>
+          </div> -->
+
+          <div>
+            <label>HObbies</label>
+           <!---<label>{{checkboxJson | json}}</label>-->
+            <div class="form-check" *ngFor="let item of checkboxJson; let i=index" >
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" [(ngModel)]="item.checked" name="checkbox{{i}}">{{item.label}}
+              </label>
+            </div>
+          </div>
+          <button class="btn btn-success my-4" type="button" (click)="onSubmit();myform.resetForm()">Save Data</button>
+    &nbsp;
+    <button type="button" (click)="showdata()" class="btn btn-primary ">Show Data</button>
+        
+        </form>
+
+        
+    

@@ -1,0 +1,93 @@
+<!-- <p>form works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <a routerLink="list">Show List View Data</a><br>
+  <h1>Tamplate Based Form</h1>
+  <form #myform="ngForm">
+  <div class="container">
+    <div className="d-flex flex-column mt-5  align-items-center">
+        <h1 className="bg-light my-5">Sign up form</h1>
+        <form id="myForm" name="myForm" className="w-50">
+          <div className="mt-3 text-start">
+            <label className="form-label" >Enter Name: </label>
+            <input
+              className="form-control"
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              [(ngModel)]="employee.name"
+            />
+          </div>
+          <div className="m-4">
+            <label className="form-label" >Enter Address: </label>
+            <input
+              className="form-control"
+              type="text"
+              name="address"
+              [(ngModel)]="employee.address"
+              placeholder="Enter your address"
+            />
+          </div>
+          <div className="m-1">
+            <label className="form-label" >Enter gender: </label>
+            <select
+              className="form-select"
+              name="gender"
+              [(ngModel)]="employee.gender">
+              <option></option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div className=" text-start my-4">
+            <label className="form-label">Enter date of joining:
+            </label>
+            <input
+              className="form-control"
+              type="date"
+              name="doj"
+              id="doj"
+              [(ngModel)]="employee.doj"
+            />
+          </div>
+          <div className=" text-start">
+            <label className="form-label" >Enter Hobbies: </label>
+            <input
+              className="form-control"
+              type="text"
+              name="hobbies"
+              id="hobbies"
+              placeholder="Enter your hobbies with leaving space"
+              [(ngModel)]="employee.hobbies"
+            />
+          </div>
+          <button
+            className="btn btn-success my-4"
+            type="submit"
+            (click)="storeData()">
+            Save Employee
+          </button>
+    &nbsp;
+          <button type="submit" 
+          (click)="remove()">
+          Delete
+        </button>&nbsp;
+
+        <button type="submit"
+        (click)="reset()">
+        Reset     
+    </button>
+        </form>
+        
+    <app-list [hero]="employees"></app-list> -->
+     <a routerLink="/form">form</a><br>
+     <a routerLink="list">List</a>
+<router-outlet></router-outlet>
