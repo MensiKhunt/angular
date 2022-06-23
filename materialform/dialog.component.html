@@ -1,0 +1,40 @@
+
+ <!-- <table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Marks</th>
+    </tr>
+   </thead>
+ <tbody>
+  <tr>
+      <th>{{data.subAry}}</th>
+    </tr>
+  </tbody> 
+</table> -->
+<!-- <button mat-raised-button color="primary" (click)="addsubject()">Add Subject </button><br/>
+<ng-container *ngFor="let item of data.subAry; let i=index" >
+  <mat-form-field appearance="fill">
+    <mat-label>Subject</mat-label>
+    <input matInput name="subject{{i}}" [(ngModel)]="item.subject">
+  </mat-form-field>&nbsp;
+  <mat-form-field appearance="fill">
+    <mat-label>Marks</mat-label>
+    <input matInput name="marks{{i}}" [(ngModel)]="item.marks">
+  </mat-form-field><br>
+  <mat-label>{{item.subject}}</mat-label>&nbsp;
+  <mat-label>{{item.marks}}</mat-label>
+
+</ng-container> -->
+<ng-container>
+<mat-dialog-content *ngFor="let item of data" >
+  <p *ngIf="!myProp">Subject ::  {{item.subject}} &nbsp;&nbsp; Marks ::  {{item.marks}}</p>
+  <p *ngIf="myProp">Nothing</p>
+</mat-dialog-content>
+</ng-container>
+
+
+<!-- <b>Subject </b> : {{fromPage}}
+<b>MArks</b> : {{fromMarks}} -->
+  
+

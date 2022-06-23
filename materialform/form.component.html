@@ -1,0 +1,116 @@
+<h3>Material Form</h3>
+<form #myform="ngForm">
+
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Name </mat-label>
+        <input matInput name="name" [(ngModel)]="model.name">
+    </mat-form-field>
+    <br>
+
+    <mat-label>Gender: </mat-label>
+    <input type="radio" name="gender" value="male" [(ngModel)]="model.gender">Male
+     <input type="radio" name="gender" value="Female" [(ngModel)]="model.gender">Female
+   <br><br>
+
+   <mat-label>Hobbie: </mat-label><br>
+   <div *ngFor="let item of checkboxJson;let i=index">
+   <mat-checkbox [(ngModel)]="item.checked" name="checkbox{{i}}">{{item.label}}</mat-checkbox>
+   </div><br>
+
+   
+   <mat-form-field appearance="fill">
+    <mat-label>Country</mat-label>
+    <mat-select name="country" matNativeControl [(ngModel)]="model.country">
+      <mat-option value="INDIA">INDIA</mat-option>
+      <mat-option value="USA">USA</mat-option>
+      <mat-option value="CANADA">CANADA</mat-option>
+      <mat-option value="SPAIN">SPAIN</mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+
+
+   <mat-form-field appearance="fill">
+    <mat-label>Address</mat-label>
+    <textarea name="address" matInput [(ngModel)]="model.address"></textarea>
+  </mat-form-field>
+  <BR>
+
+
+<mat-form-field appearance="fill">
+<mat-label>Date</mat-label>
+<input name="doj" matInput type="date" name="date" [(ngModel)]="model.doj">
+</mat-form-field><br>
+
+
+
+<!-- <mat-form-field appearance="fill">
+    <mat-label>Subject Name</mat-label>
+    <input matInput name="subject" [(ngModel)]="model.subject" #subject>
+  </mat-form-field>&nbsp;
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Marks</mat-label>
+    <input matInput name="mark" [(ngModel)]="model.marks" #marks>
+  </mat-form-field>
+
+  <button mat-stroked-button color="primary" type="button" (click)="addsubject()">Add Subjects</button>
+   -->
+
+ 
+  <ng-container *ngFor="let item of model.subAry; let i=index" >
+    <mat-form-field appearance="fill">
+      <mat-label>Subject</mat-label>
+      <input matInput name="subject{{i}}" [(ngModel)]="item.subject">
+    </mat-form-field>&nbsp;
+    <mat-form-field appearance="fill">
+      <mat-label>Marks</mat-label>
+      <input matInput name="marks{{i}}" [(ngModel)]="item.marks">
+    </mat-form-field>
+  <button mat-raised-button color="warn" (click)="removesubject(i)">Remove</button><br>
+  </ng-container>
+
+   <button mat-stroked-button color="primary" (click)="addsubject()">Add Subject </button><br><br>
+
+   <!-- <div *ngIf="dialogValue">
+    <b>Subject</b>: {{dialogValue}}
+    <b>Marks</b> : {{maxValue}}
+   </div> -->
+ <!--<button mat-raised-button color="warn" (click)="removesubject()">Remove</button> -->
+<!-- 
+<p>{{ model.subAry| json}}</p> -->
+
+
+<!-- <mat-form-field appearance="fill">
+  <input matInput placeholder="write" [(ngModel)]="dialogInput" name="write">
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <input matInput placeholder="read" [(ngModel)]="dialogOutput" name="read">
+</mat-form-field>  -->
+
+
+
+
+
+
+  <!-- <div [formGroup]="companyForm">
+    <ng-container formArrayName="admins">
+        <ng-container *ngFor="let adminForm of admins.controls; let index = index">
+            <div [formGroupName]="index">
+                <input id="subject" type="text" formControlName="subject" placeholder="Subject Name" />
+                <input id="mark" type="text" formControlName="mark" placeholder="Mark" />     
+                <button mat-stroked-button color="warn" type="button" (click)="removesubject(index)">Remove Subjects</button>           
+            </div>
+        </ng-container>
+    </ng-container>
+</div>
+<br> -->
+
+  <!-- <button mat-raised-button color="warn" (click)="openDialog()">Show Subject Data</button> -->
+  <!-- <button mat-stroked-button color="accent" (click)="addsubject()">ADD</button><br><br> -->
+
+  &nbsp;<button mat-raised-button color="primary" (click)="onSubmit();myform.resetForm();openSnackBar()">Save Data</button>&nbsp;
+  <button mat-raised-button color="accent" (click)="showdata()" class="btn btn-primary ">Show Data</button>
+
+</form>
