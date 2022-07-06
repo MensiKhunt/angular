@@ -1,0 +1,40 @@
+<br>
+<!-- <button type="button" (click)="updateEmployee(null)" class="btn btn-dark m-2">Add Users
+</button> -->
+<button type="button" (click)="updateEmployee(null)" class="btn btn-dark m-2">Add Users
+</button> 
+<table class="table m-2">
+  <tr>
+    <th>ID</th>&nbsp;&nbsp;&nbsp;
+    <th>Name </th>&nbsp;&nbsp;&nbsp;
+    <th>Address </th>&nbsp;&nbsp;&nbsp;
+    <th>Gender </th>&nbsp;&nbsp;&nbsp;
+    <th>Cars</th>&nbsp;&nbsp;&nbsp;
+    <th>DateofBirth</th>&nbsp;&nbsp;&nbsp;
+    <th>Age</th>&nbsp;&nbsp;&nbsp;
+    <th>Hobbies</th>&nbsp;&nbsp;&nbsp;
+    <th>Country</th>&nbsp;&nbsp;&nbsp;
+    <th>Subject</th>&nbsp;&nbsp;&nbsp;
+    <th colspan="2"></th>
+  </tr>
+    <tbody>
+     <tr *ngFor="let item of data; let i=index">
+       <td>{{item.id}}</td>&nbsp;&nbsp;&nbsp;
+       <td>{{item.name}}</td>&nbsp;&nbsp;&nbsp;
+       <td>{{item.address}}</td>&nbsp;&nbsp;&nbsp;
+       <td>{{item.gender}}</td>&nbsp;&nbsp;&nbsp;
+       <td>{{item.cars}}</td>&nbsp;&nbsp;&nbsp;
+       <td>{{item.doj }}</td>&nbsp;&nbsp;&nbsp;
+       <td>{{item.doj  | age}}</td>&nbsp;&nbsp;&nbsp; 
+       <td>{{item.hobbies}}</td>&nbsp;&nbsp;&nbsp;
+       <td>{{item.country}}</td>&nbsp;&nbsp;&nbsp;
+       <td><button mat-raised-button color="accent" (click)="viewSubject(item.subject)">Subject</button></td>
+      <td> <button type="button" (click)="updateEmployee(item.id)" class="btn btn-warning">Edit</button>
+           <button type="button" (click)="deleteEmployee(item.id)" class="btn btn-danger">Delete</button>
+           <button type="button" (click)="employeeDetails(item.id)" class="btn btn-success">View</button></td>
+   </tr>
+   <h1>{{x}}</h1>
+     </tbody> 
+     </table>
+
+  

@@ -1,0 +1,8 @@
+ <p>Dialog</p>
+ <ng-container>
+    <mat-dialog-content *ngFor="let item of data; let i = index" >
+        Subject :: {{item.subjectname}}&nbsp;&nbsp;
+        Marks :: {{item.marks}}&nbsp;&nbsp;
+        <button mat-raised-button color="warn" (click)="deleteSubject(item.subjectId)">Delete</button>
+    </mat-dialog-content>
+    </ng-container> 
